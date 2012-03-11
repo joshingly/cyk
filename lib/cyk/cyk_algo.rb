@@ -17,11 +17,10 @@ module CykAlgo
     end
 
     table = fill_table(diagonal, table, length, grammar_hash)
-    unless table[[0,0]].index(:S) == nil
-      return true
-    else
-      return false
-    end
+
+    return false if table[[0,0]].index(:S) == nil
+
+    true
   end
 
   private
